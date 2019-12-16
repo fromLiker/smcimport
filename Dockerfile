@@ -7,4 +7,5 @@ ENV PROJECT_ARTIFACTID="smcimport" PROJECT_VERSION="0.0.1-SNAPSHOT"
 #当使用本地目录为源目录时，推荐使用 COPY
 COPY target/$PROJECT_ARTIFACTID-$PROJECT_VERSION.jar /smcimport/import.jar
 EXPOSE 8753
-ENTRYPOINT ["java", "-jar", "/smcimport/import.jar"]
+# ENTRYPOINT ["java", "-jar", "/smcimport/import.jar"]
+ENTRYPOINT ["java","-Xms200m","-Xmx300m","-jar","/smcimport/import.jar"]
