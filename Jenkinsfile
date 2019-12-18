@@ -34,7 +34,7 @@ pipeline {
           sh 'docker image build -t ${DOCKERHUBNAME}/import .'
           // sh 'docker push ${DOCKERHUBNAME}/import'
           // sh 'docker run -d -p 8753:8753 --network smc-net --name smcimport ${DOCKERHUBNAME}/import'
-          sh 'docker run -d -p 8753:8753 --memory=400M --name smcimport ${DOCKERHUBNAME}/import'
+          sh 'docker run -d -p 8753:8753 --memory=400M --network smc-net --name SMC-Import ${DOCKERHUBNAME}/import'
         }
       }
     }
